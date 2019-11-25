@@ -1,0 +1,52 @@
+Proposed Test Cases
+NSX-T Component
+1. Ensure a spin up of kubernetes cluster will provision a NSX-T LB infront of it to allow ingress traffic - done, however smoke test with NSX-T creation of cluster have issues 
+2. Test K8s ingress capability and utilise multiple ingress controllers apart from NSX-T - not done  ( prefer to test with a running application pod like httpd or nginx )  | yelp app with ingress controller
+3. Perform HA testing of Edge servers – Approx 4-5 seconds to failover - not done (prefer to test with a running application pod like httpd or nginx) | yelp app with ingress controller and proceed to do failover
+4. Evaluate vRNI - will get Chen Hwee to evaluate, may need to extend the evaluation license (not done on our end)
+4a. Show the traffic path from one pod to another pod - not done  | Use yelb app with trace flow
+4b. Recommend firewall rules for pod to pod communications - not done | Use yelp app default firewalls
+Show 2 ways of doing firewall
+1. Manually configuring the DFW with secgroup tags
+2. Use network policy
+
+5. Mirroring traffic from pods for troubleshooting purpose - not done | Use yelb app with port mirroring + Wireshark to see
+
+From 4a to 4b use the VMware sample yelp application
+5 using for VM or Pods and Wireshark for port scanning
+ 
+PKS Component
+RBAC for PKS  - This RBAC is for PKS admins and platform admins. Do note that this is different from K8s RBAC.
+1a. Integrate with existing Active Directory and utilise the groups for RBAC (i assume ldap for pks login, if yes this is working)  
+2. Valero for backup and restore --> will provide you an object storage  - not done > https://velero.io/docs/v1.2.0/examples/
+3. Micro-segmentation between pods - not done
+4. Scale up and scale down the worker nodes easily using the pks command - not done (prefer to test with a running application pod like httpd or nginx ,dont think worker nodes can be scaled down after provisioned)
+5. Provision static and dynamic persistent volumes - additional test case | yelp -app
+
+
+NSX-T & Contour
+https://code.vmware.com/samples/5595/Running-Contour-as-Ingress-on-Enterprise-PKS-k8s-clusters-with-NSX-T#
+
+Installing Contour
+https://projectcontour.io/getting-started/
+
+Setup Min.io
+https://min.io/download#/linux
+https://velero.io/docs/v1.2.0/contributions/minio/
+
+sudo docker run --name minio -d -p 9000:9000 -e "MINIO_ACCESS_KEY=minio" -e "MINIO_SECRET_KEY=minio123" -v /mnt/minio-data/:/data minio/minio server /data
+
+sudo tar -zxvf velero-v1.0.0-linux-amd64.tar.gz -C /usr/local/bin/ --strip-components=1 velero-v1.0.0-linux-amd64/velero
+
+velero install --provider aws --bucket velero --secret-file credentials-velero --use-volume-snapshots=false --backup-location-config region=minio,s3ForcePathStyle="true",s3Url=http:192.168.110.12:9000
+—plugin  velero/velero-plugin-for-aws 
+sudo tar -zxvf velero-v1.0.0-linux-amd64.tar.gz -C /usr/local/bin/ --strip-components=1 velero-v1.0.0-linux-amd64/velero
+
+velero backup get
+
+velero backup create nginx-backup --selector app=nginx
+
+velero schedule create nginx-daily --schedule="0 1 * * *" --selector app=nginx
+
+velero restore create --from-backup nginx-backup
+velero restore get
