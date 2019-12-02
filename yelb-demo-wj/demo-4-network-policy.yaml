@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: yelb-ui
+  namespace: yelb
 spec:
   podSelector:
     matchLabels:
@@ -16,6 +17,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: yelb-appserver
+  namespace: yelb
 spec:
   podSelector:
     matchLabels:
@@ -33,6 +35,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: redis-server 
+  namespace: yelb
 spec:
   podSelector:
     matchLabels:
@@ -50,6 +53,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: yelb-db
+  namespace: yelb
 spec:
   podSelector:
     matchLabels:

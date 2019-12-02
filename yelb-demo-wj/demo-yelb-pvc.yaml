@@ -1,9 +1,10 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-	name: redis-slave-claom
-	annotations:
-    volume.beta.kubernetes.io/storage-claim
+  name: redis-slave-claim
+  namespace: yelb
+  annotations:
+    volume.beta.kubernetes.io/storage-class: thin-disk
 spec:
   accessModes:
     - ReadWriteOnce

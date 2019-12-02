@@ -86,12 +86,12 @@ spec:
         image: redis:4.0.2
         ports:
           - containerPort: 6379
-         volumeMounts:
-           - name: redis-slave-data
-             mountPath: /data
+        volumeMounts:
+          - name: redis-slave-data
+            mountPath: /data
       volumes:
       - name: redis-slave-data
-        persistantVolumeClaim:
+        persistentVolumeClaim:
           claimName: redis-slave-claim
 ---
 apiVersion: extensions/v1beta1
