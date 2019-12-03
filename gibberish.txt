@@ -1,16 +1,17 @@
 Proposed Test Cases
 NSX-T Component
-1. Ensure a spin up of kubernetes cluster will provision a NSX-T LB infront of it to allow ingress traffic - done, however smoke test with NSX-T creation of cluster have issues 
-2. Test K8s ingress capability and utilise multiple ingress controllers apart from NSX-T - not done  ( prefer to test with a running application pod like httpd or nginx )  | yelp app with ingress controller
-3. Perform HA testing of Edge servers – Approx 4-5 seconds to failover - not done (prefer to test with a running application pod like httpd or nginx) | yelp app with ingress controller and proceed to do failover
-4. Evaluate vRNI - will get Chen Hwee to evaluate, may need to extend the evaluation license (not done on our end)
-4a. Show the traffic path from one pod to another pod - not done  | Use yelb app with trace flow
-4b. Recommend firewall rules for pod to pod communications - not done | Use yelp app default firewalls
+1. Ensure a spin up of kubernetes cluster will provision a NSX-T LB infront of it to allow ingress traffic - done 
+2. Test K8s ingress capability and utilise multiple ingress controllers apart from NSX-T - done
+3. Perform HA testing of Edge servers – Approx 4-5 seconds to failover - how to check if edge if active active or active standby
+4. Evaluate vRNI - in progress
+4a. Show the traffic path from one pod to another pod - done
+4b. Recommend firewall rules for pod to pod communications - done
+
 Show 2 ways of doing firewall
 1. Manually configuring the DFW with secgroup tags
 2. Use network policy
 
-5. Mirroring traffic from pods for troubleshooting purpose - not done | Use yelb app with port mirroring + Wireshark to see
+5. Mirroring traffic from pods for troubleshooting purpose - done
 
 From 4a to 4b use the VMware sample yelp application
 5 using for VM or Pods and Wireshark for port scanning
