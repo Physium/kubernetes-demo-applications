@@ -28,4 +28,7 @@ spec:
         - backend:
             serviceName: yelb-ui
             servicePort: 80
+  tls:
+    - hosts:
+      - test01.pks-cl01-apps.acepod.com 
 ---
