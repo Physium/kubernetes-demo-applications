@@ -1,7 +1,7 @@
 # Random Bunch of Apps for Demo
 This repo is a consolidation of different kubernetes applications that can be used for testing/poc.
 
-All the yamls are tested to be working with **PKS 1.5.0** running **Kubernetes v1.14.5**
+All the yamls are tested to be working with **NSX-T 2.4, PKS 1.5.0 and Kubernetes v1.14.5**
 
 Each folder consist of different application deployment yamls that can be use to test different deployment config.
 
@@ -19,26 +19,22 @@ This folder consist of various nginx k8s configuration.
 
 ### base.yml
 A basic nginx deployment just to test pod deployment and pod services accessibility.
-
 Uses Loadbalancer as a service.
 
 ### kuard.yml
 Another basic nginx deployment that is commonly used to show pod deployment statstics.
-
-Uses Contour as an ingress.
+Example is set to use Contour as an ingress.
 
 ### cafe-app-example
-Not exactly an application but a series of nginx deployment to show case ingress routing with https.
-Uses Contour as an ingress.
+Not exactly an application but a series of nginx deployment to showcase ingress routing with https.
+Example is set to use Contour as an ingress.
 
-Reference:
-[https://code.vmware.com/samples/5595/Running-Contour-as-Ingress-on-Enterprise-PKS-k8s-clusters-with-NSX-T](https://code.vmware.com/samples/5595/Running-Contour-as-Ingress-on-Enterprise-PKS-k8s-clusters-with-NSX-T)
-
-[https://code.vmware.com/samples/5502/running-nginx-ingress-on-pks-k8s-clusters-with-nsx-t](https://code.vmware.com/samples/5502/running-nginx-ingress-on-pks-k8s-clusters-with-nsx-t)
+References:
+* [https://code.vmware.com/samples/5595/Running-Contour-as-Ingress-on-Enterprise-PKS-k8s-clusters-with-NSX-T](https://code.vmware.com/samples/5595/Running-Contour-as-Ingress-on-Enterprise-PKS-k8s-clusters-with-NSX-T)
+* [https://code.vmware.com/samples/5502/running-nginx-ingress-on-pks-k8s-clusters-with-nsx-t](https://code.vmware.com/samples/5502/running-nginx-ingress-on-pks-k8s-clusters-with-nsx-t)
 
 # yelb demo app
 This is a basic microservice application which can be use to showcase various k8 deployment concepts. 
-
 YAMLs in this folder are tweak and edited accordingly to how I would deploy or showcase it.
 
 All original content and credits goes to [https://github.com/mreferre/yelb](https://github.com/mreferre/yelb).
@@ -55,8 +51,6 @@ Similar to yelb-app but showcases the deployment yelb-app with dynamic pvc.
 # More randoms apps - Untested
 Consolidating more demo apps found over time
 
-[VMware Cloud Advocacy - ACME Fitness](https://github.com/vmwarecloudadvocacy/acme_fitness_demo)
-
-[GCP Microservics Demo - Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
-
-[Project Pacific Demo Apps](https://github.com/dstamen/Kubernetes/tree/master/demo-applications)
+*[VMware Cloud Advocacy - ACME Fitness](https://github.com/vmwarecloudadvocacy/acme_fitness_demo)
+*[GCP Microservics Demo - Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
+*[Project Pacific Demo Apps](https://github.com/dstamen/Kubernetes/tree/master/demo-applications)
