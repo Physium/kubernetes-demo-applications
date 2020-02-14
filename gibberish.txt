@@ -18,12 +18,11 @@ From 4a to 4b use the VMware sample yelp application
  
 PKS Component
 RBAC for PKS  - This RBAC is for PKS admins and platform admins. Do note that this is different from K8s RBAC.
-1a. Integrate with existing Active Directory and utilise the groups for RBAC (i assume ldap for pks login, if yes this is working)  
-2. Valero for backup and restore --> will provide you an object storage  - not done > https://velero.io/docs/v1.2.0/examples/
-3. Micro-segmentation between pods - not done
-4. Scale up and scale down the worker nodes easily using the pks command - not done (prefer to test with a running application pod like httpd or nginx ,dont think worker nodes can be scaled down after provisioned)
-5. Provision static and dynamic persistent volumes - additional test case | yelp -app
-
+1a. Integrate with existing Active Directory and utilise the groups for RBAC - done  
+2. Velero for backup and restore --> will provide you an object storage  - not done | send him guide
+3. Micro-segmentation between pods - done
+4. Scale up and scale down the worker nodes easily using the pks command - done
+5. Provision static and dynamic persistent volumes - done
 
 NSX-T & Contour
 https://code.vmware.com/samples/5595/Running-Contour-as-Ingress-on-Enterprise-PKS-k8s-clusters-with-NSX-T#
