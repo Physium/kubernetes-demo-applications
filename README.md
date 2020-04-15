@@ -48,8 +48,9 @@ Showcases various k8 deployment config with a mixture of the following:
 ### yelb-app-pvc
 Similar to yelb-app but showcases the deployment yelb-app with dynamic pvc.
 
-# More randoms apps - Untested
+# More Randoms Kubernetes Applications 
 Consolidating more demo apps found over time:
 * [VMware Cloud Advocacy - ACME Fitness](https://github.com/vmwarecloudadvocacy/acme_fitness_demo)
 * [GCP Microservics Demo - Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
 * [Project Pacific Demo Apps](https://github.com/dstamen/Kubernetes/tree/master/demo-applications)
+* [Photo Management App](https://github.com/davlloyd/k8s-lychee)
