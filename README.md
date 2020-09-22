@@ -54,3 +54,4 @@ Consolidating more demo apps found over time:
 * [GCP Microservics Demo - Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
 * [Project Pacific Demo Apps](https://github.com/dstamen/Kubernetes/tree/master/demo-applications)
 * [Photo Management App](https://github.com/davlloyd/k8s-lychee)
+* [Sock Shop - WeaveWorks](https://microservices-demo.github.io/docs/load-test.html)
