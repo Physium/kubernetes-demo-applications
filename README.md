@@ -52,6 +52,6 @@ Similar to yelb-app but showcases the deployment yelb-app with dynamic pvc.
 Consolidating more demo apps found over time:
 * [VMware Cloud Advocacy - ACME Fitness](https://github.com/vmwarecloudadvocacy/acme_fitness_demo)
 * [GCP Microservics Demo - Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
+* [WeaveWorks Microserviecs demo - Sock Shop](https://microservices-demo.github.io/docs/load-test.html)
 * [Project Pacific Demo Apps](https://github.com/dstamen/Kubernetes/tree/master/demo-applications)
 * [Photo Management App](https://github.com/davlloyd/k8s-lychee)
-* [Sock Shop - WeaveWorks](https://microservices-demo.github.io/docs/load-test.html)
